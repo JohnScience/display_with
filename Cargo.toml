@@ -1,0 +1,21 @@
+[package]
+name = "display_with"
+edition = "2021"
+version = "0.1.0"
+authors = ["Dmitrii Demenev <dmitrii@searchless.ca>"]
+description = "Return opaque impl Display and/or impl Debug types via display_with and debug_with."
+documentation = "https://docs.rs/display_with"
+readme = "README.md"
+keywords = [
+    "display",
+    "debug",
+    "impl",
+    "trait",
+    "formatting",
+]
+categories = [
+    "value-formatting",
+    "rust-patterns",
+]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/JohnScience/display_with"
