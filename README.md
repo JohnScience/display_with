@@ -26,6 +26,20 @@ let debug = debug_with(|f| write!(f, "Hello, world!"));
 assert_eq!(format!("{debug:?}"), "Hello, world!");
 ```
 
+This can be combined with the `format_args!` macro to use the opaque types with the `write!` and `writeln!` macros.
+
+```rust
+use core::fmt::Write;
+use display_with::{display_with, debug_with};
+fn main() -> std::fmt::Result {
+    let display = display_with(|f| write!(f, "Hello, world!"));
+    let mut s = String::new();
+    // Unlike `s.push_str(&format!("{display}"))`, this doesn't require an extra allocation.
+    write!(&mut s, "{}", format_args!("{display}"))?;
+    Ok(())
+}
+```
+
 ## License
 
 Licensed under either of
